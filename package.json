@@ -1,0 +1,23 @@
+{
+  "name": "wq",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "changeling": "~0.1.1",
+    "ecstatic": "~0.4.11",
+    "mime": "~1.2.11",
+    "mkdom": "~0.0.4",
+    "pipedown": "~0.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "watch",
+    "server"
+  ],
+  "author": "Michael Rhodes",
+  "license": "MIT"
+}
