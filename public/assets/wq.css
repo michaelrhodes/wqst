@@ -1,9 +1,11 @@
 #content {
-  font-size: 14px;
-  line-height: 1.6;
+  font: normal 14px/1.6 sans-serif;
   margin: 0 auto;
   max-width: 540px;
-  padding: 1em;
+  padding: 2em 1em;
+}
+pre#content {
+  font-family: monospace;
 }
 #content > *:first-child {
   margin-top: 0 !important;
@@ -263,10 +265,12 @@
   white-space: pre;
 }
 #content .highlight pre, #content pre {
+  -webkit-overflow-scrolling: touch;
   background-color: #F8F8F8;
   border: 1px solid #CCCCCC;
   border-radius: 3px 3px 3px 3px;
   font-size: 13px;
+  font-family: monospace;
   line-height: 19px;
   overflow: auto;
   padding: 6px 10px;

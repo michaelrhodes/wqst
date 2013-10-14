@@ -1,14 +1,19 @@
 {
   "name": "wq",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A web server that renders live-updates of files in the working directory.",
+  "bin": "index.js",
   "dependencies": {
-    "changeling": "~0.1.1",
     "ecstatic": "~0.4.11",
+    "changeling": "~0.1.4",
     "mime": "~1.2.11",
     "mkdom": "~0.0.4",
-    "pipedown": "~0.0.0"
+    "el": "~0.2.1",
+    "pipedown": "~0.0.0",
+    "stream-filter": "~1.0.0",
+    "escape-html": "~1.0.0",
+    "getport": "~0.1.0",
+    "through": "~2.3.4"
   },
   "devDependencies": {},
   "scripts": {
