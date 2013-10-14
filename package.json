@@ -1,5 +1,5 @@
 {
-  "name": "wq",
+  "name": "wqst",
   "version": "0.0.0",
   "description": "A command-line utility that spawns web servers to render text files from the working directory.",
   "bin": "index.js",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:michaelrhodes/wq.git"
+    "url": "git@github.com:michaelrhodes/wqst.git"
   },
   "keywords": [
     "watch",
