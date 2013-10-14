@@ -1,7 +1,7 @@
 {
   "name": "wq",
   "version": "0.0.0",
-  "description": "A web server that renders live-updates of files in the working directory.",
+  "description": "A command-line utility that spawns web servers to render text files from the working directory.",
   "bin": "index.js",
   "dependencies": {
     "ecstatic": "~0.4.11",
