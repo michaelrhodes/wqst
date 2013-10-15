@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var http = require('http')
-var around= require('getport')
+var around = require('getport')
 var fs = require('fs')
 var path = require('path')
 var mime = require('mime')
