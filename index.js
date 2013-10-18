@@ -72,7 +72,6 @@ var server = http.createServer(function(request, response) {
 })
 
 // Listen dance
-
 var announce = function() {
   console.log('Listening on ' + this.address().port)
 }
