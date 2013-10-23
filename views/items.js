@@ -25,7 +25,7 @@ util.inherits(Items, stream.Transform)
 
 Items.prototype._transform = function(file, encoding, done) {
   var href = file.path.replace(RegExp('.*' + this.directory + '/'), '')
-  this.content.innerHTML += '<a href="' + href + '">' + href + '</a>\n'
+  this.content.innerHTML += '<a href="' + href + '">' + href + '</a><br />'
   done()
 }
 

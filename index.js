@@ -11,9 +11,7 @@ var ls = require('./lib/ls')
 var watch = require('./lib/watch')
 var items= require('./views/items')
 var item = require('./views/item')
-var filter = require('stream-filter')(function(file) {
-  return file.stat.isFile()
-})
+var filter = require('stream-filter')
 
 var files = ecstatic({
   handleError: false,
@@ -40,7 +38,9 @@ var server = http.createServer(function(request, response) {
   else if (request.url === '/') {
     var render = items(path.basename(directory))
     return ls(directory, false)
-      .pipe(filter)
+      .pipe(filter(function(file) {
+        return file.stat.isFile()
+      }))
       .pipe(render)
       .pipe(response)
   }
