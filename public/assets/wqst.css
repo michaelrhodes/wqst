@@ -6,7 +6,6 @@
 }
 pre#content {
   font-family: monospace;
-  white-space: normal;
 }
 #content > *:first-child {
   margin-top: 0 !important;

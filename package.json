@@ -1,6 +1,6 @@
 {
   "name": "wqst",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A command-line utility that spawns web servers to render text files from the working directory.",
   "bin": "index.js",
   "dependencies": {
