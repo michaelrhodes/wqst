@@ -2,11 +2,9 @@ var fs = require('fs')
 var stream = require('stream')
 var util = require('util')
 var mkdom = require('mkdom')
-var el = require('el')
 var escape = require('escape-html')
 
 var template = fs.readFileSync(__dirname + '/template.html')
-var script = mkdom('<script src="/assets/updates.js"></script>')
 
 var Item = function(name, type) {
   if (!(this instanceof Item)) {
@@ -27,10 +25,11 @@ var Item = function(name, type) {
     var div = mkdom('<div id="content">')
     this.body.removeChild(pre.nextSibling)
     this.body.removeChild(pre)
-    el.append(this.body, div)
+    this.body.appendChild(div)
   }
 
-  el.append(this.body, script)
+  var script = mkdom('<script src="/assets/updates.js"></script>')
+  this.body.appendChild(script)
 
   this.content = this.body.querySelector('#content')
 }

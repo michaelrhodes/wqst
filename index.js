@@ -7,11 +7,11 @@ var path = require('path')
 var mime = require('mime')
 var ecstatic = require('ecstatic')
 var pipedown = require('pipedown')
-var ls = require('./lib/ls')
+var ls = require('ls-stream')
+var through = require('through')
 var watch = require('./lib/watch')
-var items= require('./views/items')
+var items = require('./views/items')
 var item = require('./views/item')
-var filter = require('stream-filter')
 
 var files = ecstatic({
   handleError: false,
@@ -37,9 +37,11 @@ var server = http.createServer(function(request, response) {
   // Directory listing w/links
   else if (request.url === '/') {
     var render = items(path.basename(directory))
-    return ls(directory, false)
-      .pipe(filter(function(file) {
-        return file.stat.isFile()
+    return ls(directory)
+      .pipe(through(function(entry) {
+        entry.stat.isDirectory() ?
+          entry.ignore() :
+          this.queue(entry)
       }))
       .pipe(render)
       .pipe(response)
