@@ -7,7 +7,9 @@ $ npm install -g wqst
 ```
 
 ### API
-`wqst [port]`
+`wqst [--open=file] [port]`
+
+Use the `--open` flag without a value if you want the directory listing opened in your default browser. Set the value if you want to view a specific file.
 
 If no port is specified, the web server will spin up on `1234`. If `1234` is unavailable, the port will be incremented until an available port is found.
 

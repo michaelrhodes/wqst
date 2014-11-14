@@ -9,6 +9,8 @@ var ecstatic = require('ecstatic')
 var pipedown = require('pipedown')
 var ls = require('ls-stream')
 var through = require('through')
+var open = require('open')
+var argv = require('minimist')(process.argv.slice(2))
 var watch = require('./lib/watch')
 var items = require('./views/items')
 var item = require('./views/item')
@@ -73,12 +75,19 @@ var server = http.createServer(function(request, response) {
     .pipe(response)
 })
 
-// Listen dance
 var announce = function() {
-  console.log('Listening on ' + this.address().port)
+  var details = this.address()
+  console.log('Listening on ' + details.port)
+
+  if (argv.open) {
+    var file = typeof argv.open === 'string' ? argv.open : null
+    var root = 'http://' + details.address + ':' + details.port
+    var url = file ? root + '/' + file : root
+    open(url)
+  }
 }
 
-var port = process.argv[2]
+var port = argv._[0]
 if (port) {
   server.listen(port, announce)
   return
