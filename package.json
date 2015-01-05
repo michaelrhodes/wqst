@@ -13,7 +13,7 @@
     "minimist": "~1.1.0",
     "mkdom": "~0.1.0",
     "open": "~0.0.5",
-    "pipedown": "~0.1.0",
+    "pipedown": "0.0.3",
     "through": "~2.3.4"
   },
   "devDependencies": {},
