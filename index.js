@@ -81,7 +81,7 @@ var announce = function() {
 
   if (argv.open) {
     var file = typeof argv.open === 'string' ? argv.open : null
-    var root = 'http://' + details.address + ':' + details.port
+    var root = 'http://localhost:' + details.port
     var url = file ? root + '/' + file : root
     open(url)
   }

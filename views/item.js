@@ -22,15 +22,19 @@ var Item = function(name, type) {
   // Swap the <pre> for a <div>
   if (this.markdown) {
     var pre = this.body.querySelector('pre')
-    var div = mkdom('<div id="content">')
+    var div = this.dom.importNode(
+      mkdom('<div id="content">')
+    )
     this.body.removeChild(pre.nextSibling)
     this.body.removeChild(pre)
     this.body.appendChild(div)
   }
 
-  var script = mkdom('<script src="/assets/updates.js"></script>')
-  this.body.appendChild(script)
+  var script = this.dom.importNode(
+    mkdom('<script src="/assets/updates.js"></script>')
+  )
 
+  this.body.appendChild(script)
   this.content = this.body.querySelector('#content')
 }
 
@@ -46,7 +50,7 @@ Item.prototype._transform = function(data, encoding, done) {
 }
 
 Item.prototype._flush = function(done) {
-  var html = this.dom.doctype + this.dom.outerHTML
+  var html = this.dom.outerHTML
   this.push(html.trim())
   done()
 }

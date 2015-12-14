@@ -14,7 +14,6 @@ var Items = function(name, type) {
   this.directory = name
 
   this.dom = mkdom(template)
-  this.body = this.dom.querySelector('body')
   this.title = this.dom.querySelector('title')
   this.content = this.dom.querySelector('#content')
 
@@ -30,7 +29,7 @@ Items.prototype._transform = function(file, encoding, done) {
 }
 
 Items.prototype._flush = function(done) {
-  var html = this.dom.doctype + this.dom.outerHTML
+  var html = this.dom.outerHTML
   this.push(html.trim())
   done()
 }

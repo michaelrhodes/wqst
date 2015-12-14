@@ -4,17 +4,17 @@
   "description": "A command-line utility that spawns web servers to render text files from the working directory.",
   "bin": "index.js",
   "dependencies": {
-    "changeling": "~0.1.4",
-    "ecstatic": "~0.4.11",
-    "escape-html": "~1.0.0",
+    "changeling": "~0.1.6",
+    "ecstatic": "~1.3.1",
+    "escape-html": "~1.0.3",
     "getport": "~0.1.0",
     "ls-stream": "~1.0.0",
-    "mime": "~1.2.11",
-    "minimist": "~1.1.0",
-    "mkdom": "~0.1.0",
+    "mime": "~1.3.4",
+    "minimist": "~1.2.0",
+    "mkdom": "~1.0.1",
     "open": "~0.0.5",
-    "pipedown": "0.0.3",
-    "through": "~2.3.4"
+    "pipedown": "0.0.2",
+    "through": "~2.3.8"
   },
   "devDependencies": {},
   "scripts": {
